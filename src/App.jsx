@@ -21,7 +21,7 @@ function App() {
 
   const increment = (id) => {
     const updatedState = state.map(el => {
-      if(el.id === id) {
+      if (el.id === id) {
         return {
           ...el,
           count: el.count + 1
@@ -37,7 +37,7 @@ function App() {
 
   const decrement = (id) => {
     const updatedState = state.map(el => {
-      if(el.id === id) {
+      if (el.id === id) {
         return {
           ...el,
           count: el.count - 1
@@ -54,11 +54,17 @@ function App() {
   return (
     <div className='max-w-lg max-h-screen  mx-auto flex items-center justify-center shadow-lg p-2 gap-4'>
       <div>
-      {state.map(({id, count}) => {
-        return <Counter key={id} count={count} increment={() => increment(id)} />
-      })}
+        {state.map(({ id, count }) => {
+          return <Counter
+            key={id}
+            id={id}
+            count={count}
+            increment={increment}
+            decrement={decrement}
+          />
+        })}
 
-      <Count total={totalCount} />
+        <Count total={totalCount} />
 
       </div>
     </div>

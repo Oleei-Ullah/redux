@@ -1,12 +1,13 @@
+import Button from "./Button"
+
 /* eslint-disable react/prop-types */
-const Counter = ({count, increment}) => {
+const Counter = ({count, increment, decrement, id}) => {
     return (
         <div className="text-center border-2 p-2">
             <h1 className="font-bold text-2xl text-green-500 mb-3">{count}</h1>
             <div className="flex items-center gap-4">
-                <button onClick={increment} className="bg-blue-600 px-2 py-1 text-white font-bold text-md rounded-md">increment</button>
-
-                <button onClick={increment} className="bg-blue-600 px-2 py-1 text-white font-bold text-md">decrement</button>
+                <Button todo={() => increment(id)}>Increment</Button>
+                <Button todo={() => decrement(id)}>decrement</Button>
             </div>
         </div>
     )
