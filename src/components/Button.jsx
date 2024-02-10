@@ -1,7 +1,7 @@
-const Button = ({todo, children}) => {
+const Button = ({handler, children}) => {
     return (
         <button
-        onClick={todo}
+        onClick={handler}
         className="bg-blue-600 px-2 py-1 text-white font-bold text-md rounded-md">
             {children}
         </button>
